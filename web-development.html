@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Services | CK Tech</title>
+    <style>
+        :root {
+            --deep-blue: #0a2463;
+            --electric-purple: #7d53de;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --dark-gray: #333333;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--deep-blue);
+            padding: 20px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .logo-text span {
+            color: var(--electric-purple);
+        }
+
+        /* Hero Section */
+        .service-hero {
+            background: linear-gradient(135deg, var(--deep-blue) 0%, #3a0ca3 100%);
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .service-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .service-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--electric-purple);
+            color: var(--white);
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: var(--white);
+            color: var(--deep-blue);
+            transform: translateY(-3px);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--deep-blue);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background: var(--electric-purple);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(125, 83, 222, 0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--electric-purple) 0%, #a78bfa 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--white);
+            font-size: 1.8rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--deep-blue);
+            margin-bottom: 15px;
+        }
+
+        /* Process Section */
+        .process-section {
+            background: var(--light-gray);
+            padding: 80px 0;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--electric-purple);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            color: var(--deep-blue);
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--deep-blue);
+            color: var(--white);
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .service-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-text">CK <span>Tech</span></div>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <h1>Web Development Services</h1>
+            <p>Custom websites, school portals, and e-commerce stores that engage your audience and drive results.</p>
+            <a href="#contact" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Web Solutions</h2>
+                <p>We build digital experiences that deliver real business value</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Custom Websites</h3>
+                    <p>Tailored websites designed to reflect your brand and achieve your business objectives with responsive designs that work on all devices.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3>School Portals</h3>
+                    <p>Comprehensive education portals with student management systems, learning platforms, and parent communication tools.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>E-commerce Stores</h3>
+                    <p>Powerful online stores with secure payment gateways, inventory management, and marketing tools to grow your sales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Development Process</h2>
+                <p>A structured approach to ensure your project's success</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>We start by understanding your goals, audience, and requirements to create a detailed project plan.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Design</h3>
+                    <p>Our designers create wireframes and prototypes to visualize your site's layout and user experience.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Development</h3>
+                    <p>We build your website using modern technologies with clean, efficient code optimized for performance.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Testing</h3>
+                    <p>Rigorous testing across devices and browsers ensures flawless functionality before launch.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Launch</h3>
+                    <p>We deploy your website and provide training so you can manage content with confidence.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Support</h3>
+                    <p>Ongoing maintenance and updates keep your site secure and performing at its best.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Build Your Perfect Website?</h2>
+            <p>Let's discuss how we can create a web solution that drives results for your business.</p>
+            <a href="#contact" class="btn">Get Your Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#portfolio">Portfolio</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <p>&copy; 2025 CK Tech. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+    </html>                   
